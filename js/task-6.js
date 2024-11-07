@@ -11,6 +11,10 @@ const boxesCreating = {
   destroyButton: document.querySelector('button[data-destroy]'),
   createBoxes() {
     boxesCreating.boxContainer.innerHTML = '';
+    if (boxesCreating.amount.value > 100 || boxesCreating.amount.value < 1) {
+      boxesCreating.amount.value = 1;
+      return;
+    }
     for (let i = 1, size = 30; i <= boxesCreating.amount.value; i++, size += 10){
       const color = getRandomHexColor();
       boxesCreating.boxContainer.insertAdjacentHTML('beforeend', `<div style="background-color: ${color}; width: ${size}px; height: ${size}px"></div>`);
