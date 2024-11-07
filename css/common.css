@@ -210,7 +210,7 @@ input::placeholder {
   background-color: #ff4e4e;
 }
 
-#controls>button[data-destroy], #controls>button[data-destroy]{
+#controls>button[data-destroy]:hover, #controls>button[data-destroy]:focus{
   background-color: #ff7070;
 }
 
