@@ -15,10 +15,12 @@ const boxesCreating = {
       boxesCreating.amount.value = 1;
       return;
     }
+    const boxesHTML = [];
     for (let i = 1, size = 30; i <= boxesCreating.amount.value; i++, size += 10){
       const color = getRandomHexColor();
-      boxesCreating.boxContainer.insertAdjacentHTML('beforeend', `<div style="background-color: ${color}; width: ${size}px; height: ${size}px"></div>`);
+      boxesHTML.push(`<div style="background-color: ${color}; width: ${size}px; height: ${size}px"></div>`);
     }
+    boxesCreating.boxContainer.insertAdjacentHTML("afterbegin", boxesHTML.join(''));
     boxesCreating.amount.value = 1;
   },
   destroyBoxes (){
